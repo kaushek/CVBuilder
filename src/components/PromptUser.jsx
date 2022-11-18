@@ -3,13 +3,34 @@ import { useNavigate } from "react-router-dom";
 import InputItems from './InputItems'
 import {HiArrowRight} from 'react-icons/hi';
 import 'animate.css'; import Resume from './Resume';
+import Axios from 'axios'
 
 const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
     const navigate = useNavigate();
 
+
     const onButtonClick = () => {
-        alert(`WINDOWS DIMENSION : ${window.innerWidth}, ${window.innerHeight}`)
         navigate('/resume')
+    }
+
+    const submitCV = () => {
+        Axios.post('http://localhost:3001/api/saveCVDetails', {
+            FirstName: typeof userObject.firstName == 'undefined' ? alert('First name cannot be empty') : userObject.firstName, 
+            LastName: typeof userObject.lastName == 'undefined' ? alert('Last name cannot be empty') : userObject.lastName, 
+            Email: typeof userObject.email == 'undefined' ? alert('Email cannot be empty') : userObject.email, 
+            Phone: typeof userObject.phoneNumber == 'undefined' ? alert('Phone number cannot be empty') : userObject.phoneNumber,
+            WebSite: typeof userObject.website == 'undefined' ? alert('Website cannot be empty') : userObject.website,
+            JobTitle: typeof userObject.jobTitle == 'undefined' ? alert('Current job title cannot be empty') : userObject.jobTitle, 
+            Summary: typeof userObject.summary == 'undefined' ? alert('Summary cannot be empty') : userObject.summary, 
+            Skills: typeof userObject.skills == 'undefined' ? alert('Skills cannot be empty') : userObject.skills, 
+            WorkExperience: typeof userObject.experience == 'undefined' ? alert('Experience cannot be empty') : userObject.experience, 
+            Education: typeof userObject.education == 'undefined' ? alert('Education cannot be empty') : userObject.education, 
+            Achievements: typeof userObject.achievements == 'undefined' ? alert('Achievements cannot be empty') : userObject.achievements
+        }).then((res) => {
+            alert("Successfully Inserted!");
+
+            userObject.firstName = "";
+        });
     }
 
     return(
@@ -33,6 +54,8 @@ const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
                 <button className='generate-button' onClick={() => {
                     onButtonClick()
                 }}>Generate Resume <HiArrowRight/></button>
+
+                <button className="save-button" onClick={submitCV}> Save CV Data <HiArrowRight/></button>
             </div>
             
             </div>}
