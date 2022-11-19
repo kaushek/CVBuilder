@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     generateImage();
-  }, [])
+  })
 
   function handleChange(e) {
     setUserInfo(prevInfo => {

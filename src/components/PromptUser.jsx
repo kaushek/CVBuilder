@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import InputItems from './InputItems'
 import {HiArrowRight} from 'react-icons/hi';
-import 'animate.css'; import Resume from './Resume';
-import Axios from 'axios'
+import 'animate.css'; 
+import Resume from './Resume';
+import Axios from 'axios';
 
 const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
     const navigate = useNavigate();
