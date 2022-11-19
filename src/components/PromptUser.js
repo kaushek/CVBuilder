@@ -6,6 +6,10 @@ import {HiArrowRight} from 'react-icons/hi';
 import Resume from './Resume';
 import Axios from 'axios';
 
+/*  This file contains the code segments of the page where user enters their input.
+    A post request is sent to the backend when the user saves the cv details. Upon a successful save, the user is notified.
+    When the user clicks the generate resume button, the entered data will be passed to resume page. Generated resume can be viewed in resume page.
+    the object 'userObject' carries the input data to the resume page  */
 const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
     const navigate = useNavigate();
 

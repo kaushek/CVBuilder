@@ -3,6 +3,7 @@ import {CgWebsite} from 'react-icons/cg';
 import {BsTelephone} from 'react-icons/bs';
 import { MdEmail } from "react-icons/md";
 
+/* This is the resume page where the resume/CV gets created. */
 const Resume = ({imageSource, userObject}) => {
     return (
         <div className='resume-card'>

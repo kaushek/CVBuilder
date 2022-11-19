@@ -5,6 +5,9 @@ import PromptUser from './components/PromptUser';
 import Resume from './components/Resume';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
+/*  This is the root page. 
+    this file is used to manage the routing activities in the application. 
+    generateImage method calls an opensource URL to get unique images for each CV generation.  */
 const converter = require('number-to-words')
 function App() {
   const [userInfo, setUserInfo] = useState({});
