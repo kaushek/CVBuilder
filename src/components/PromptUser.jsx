@@ -27,9 +27,8 @@ const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
             Education: typeof userObject.education == 'undefined' ? alert('Education cannot be empty') : userObject.education, 
             Achievements: typeof userObject.achievements == 'undefined' ? alert('Achievements cannot be empty') : userObject.achievements
         }).then((res) => {
+            console.log(res)
             alert("Successfully Inserted!");
-
-            userObject.firstName = "";
         });
     }
 

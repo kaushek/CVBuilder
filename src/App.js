@@ -1,11 +1,9 @@
 import './App.css';
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import ErrPage from './components/ErrPage';
 import PromptUser from './components/PromptUser';
 import Resume from './components/Resume';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {useNavigate, Link} from 'react-router-dom';
-import {HiArrowRight} from 'react-icons/hi';
 
 const converter = require('number-to-words')
 function App() {
@@ -13,10 +11,6 @@ function App() {
   const [source, setSource] = useState('');
   const randomNo = Math.floor(Math.random() * 10e4);
   const randomAlphaNo = converter.toWords(randomNo);
-
-  const getRandomNo = (randNo) => {
-    return converter.toWords(randNo);
-  }
 
   const generateImage = () => {
     setSource(`https://robohash.org/stefan=${randomAlphaNo}`);
