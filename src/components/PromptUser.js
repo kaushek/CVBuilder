@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import InputItems from './InputItems'
+import InputItems from "./InputItems";
 import {HiArrowRight} from 'react-icons/hi';
-import 'animate.css'; 
+// import 'animate.css'; 
 import Resume from './Resume';
 import Axios from 'axios';
 
@@ -34,10 +34,10 @@ const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
 
     return(
         <>
-        {OnButtonClick ? <Resume userObject = {userObject} imageSource = {imageSource} /> : <div className='prompt-container animate__animated animate__bounce'>
+        {OnButtonClick ? <Resume userObject = {userObject} imageSource = {imageSource} /> : <div className='prompt-container'>
             <div className='page-header'>CV Builder</div>
             <div className='inputs'>
-                <InputItems className = 'first-name' onChange = {handleChange} label = 'First Name' placeholder = 'Enter the first name' name='firstName' />
+                <InputItems className = 'first-name' onChange = {handleChange} label = 'First Name' placeholder = 'Enter the first name' name='firstName'  />
                 <InputItems className = 'last-name' onChange = {handleChange} label = 'Last Name' placeholder = 'Enter the last name' name='lastName' />
                 <InputItems className = 'email' onChange = {handleChange} label = 'Email' placeholder = 'Enter the email' name='email' />
                 <InputItems className = 'phone' onChange = {handleChange} label = 'Phone' placeholder = 'Enter the phone no' name='phoneNumber' />
@@ -50,7 +50,7 @@ const PromptUser = ({handleChange, OnButtonClick, imageSource, userObject}) => {
                 <InputItems className = 'education' onChange = {handleChange} label = 'Education' placeholder = 'Enter the education' name='education' isTextArea={true} />
                 <InputItems className = 'achievements' onChange = {handleChange} label = 'Achievements' placeholder = 'Enter the achievements' name='achievements' isTextArea={true}/>
             
-                <button className='generate-button' onClick={() => {
+                <button className='generate-button' data-testid ='tstGenButton' onClick={() => {
                     onButtonClick()
                 }}>Generate Resume <HiArrowRight/></button>
 
