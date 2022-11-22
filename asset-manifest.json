@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CVBuilder/static/css/main.1db13551.css",
+    "main.js": "/CVBuilder/static/js/main.53162ac3.js",
+    "static/js/787.fb80159c.chunk.js": "/CVBuilder/static/js/787.fb80159c.chunk.js",
+    "index.html": "/CVBuilder/index.html",
+    "main.1db13551.css.map": "/CVBuilder/static/css/main.1db13551.css.map",
+    "main.53162ac3.js.map": "/CVBuilder/static/js/main.53162ac3.js.map",
+    "787.fb80159c.chunk.js.map": "/CVBuilder/static/js/787.fb80159c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1db13551.css",
+    "static/js/main.53162ac3.js"
+  ]
+}
